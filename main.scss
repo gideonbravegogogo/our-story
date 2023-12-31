@@ -1,0 +1,100 @@
+$black: #000000;
+$white: #ffffff;
+$primary1: #ff2953;
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$custom-theme-colors : (
+    "altLight" : rgb(220,177,59),
+    "altDark" : rgb(10,14,41),
+    "altGreen" : rgba(13, 53, 13, 0.338)
+);
+
+// main.scss
+
+// Font
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  // Header
+  header {
+    background-color: #d18baf; /* Medium pink header background */
+    padding: 20px;
+    text-align: center;
+    color: #ffffff; /* White text color */
+  }
+  
+  // Navigation
+  nav {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+  
+      li {
+        display: inline-block;
+        margin-right: 20px;
+  
+        a {
+          text-decoration: none;
+          color: #ffffff; /* White link color */
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  
+  // Main Content
+  main {
+    padding: 20px;
+  
+    // Photo Gallery
+    .photo-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+  
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+  
+    // Video
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive video */
+      overflow: hidden;
+  
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  
+  // Footer
+  footer {
+    background-color: #d18baf; /* Medium pink footer background */
+    padding: 20px;
+    text-align: center;
+    color: #ffffff; /* White text color */
+  }
+  
+
+$theme-colors: map-merge($custom-theme-colors , $theme-colors );
+
+
+//import bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap"
